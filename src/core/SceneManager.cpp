@@ -5,8 +5,9 @@
 
 using namespace Core;
 
-SceneManager::SceneManager(){
-    currentScene = new Snake::SnakeScene();
+SceneManager::SceneManager(Engine* engine){
+    this->engine = engine;
+    currentScene = new Snake::SnakeScene(engine);
 }
 
 SceneManager::~SceneManager(){

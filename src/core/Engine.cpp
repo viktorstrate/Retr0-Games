@@ -1,6 +1,5 @@
 #include "Engine.h"
 #include "SceneManager.h"
-#include "AssetsManager.h"
 
 #include <iostream>
 
@@ -8,9 +7,8 @@ using namespace Core;
 
 Engine::Engine(Game* game){
     running = false;
-    sceneManager = new SceneManager();
+    sceneManager = new SceneManager(this);
     this->game = game;
-    assets = new AssetsManager();
 
     lastTickTime = 0;
     deltaTime = 0;

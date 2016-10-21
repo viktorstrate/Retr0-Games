@@ -5,8 +5,8 @@
 
 using namespace Snake;
 
-SnakeScene::SnakeScene(){
-
+SnakeScene::SnakeScene(Core::Engine* engine){
+    this->engine = engine;
 }
 
 void SnakeScene::render(SDL_Surface* surface){

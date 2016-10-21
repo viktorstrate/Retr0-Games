@@ -8,7 +8,6 @@ set(SOURCE_FILES
   core/Engine.cpp
   core/SceneManager.cpp
   core/Scene.cpp
-  core/AssetsManager.cpp
 
   games/snake/Entity.cpp
   games/snake/PowerupEntity.cpp
@@ -22,7 +21,6 @@ set(Header_FILES
   core/Engine.h
   core/SceneManager.h
   core/Scene.h
-  core/AssetsManager.h
 
   games/snake/Entity.h
   games/snake/PowerupEntity.h
@@ -35,3 +33,7 @@ include_directories(".")
 
 add_executable(Retr0 ${SOURCE_FILES})
 target_link_libraries(Retr0 ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})
+
+add_custom_command(TARGET Retr0 POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:Retr0>/assets)

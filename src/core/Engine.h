@@ -1,7 +1,6 @@
 #pragma once
 
 #include "SceneManager.h"
-#include "AssetsManager.h"
 #include "../Game.h"
 
 #include <SDL.h>
@@ -21,7 +20,6 @@ class Engine {
         void quit();
         void startLoop();
 
-        AssetsManager* assets;
 
     private:
         SceneManager* sceneManager;
