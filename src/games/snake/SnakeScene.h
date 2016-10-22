@@ -17,6 +17,7 @@ class SnakeScene: public Core::Scene {
         void handleEvents(SDL_Event* e);
     private:
         Core::Engine* engine;
+        SDL_Surface* snakeImage;
 };
 
 }

@@ -31,9 +31,8 @@ void Engine::startLoop(){
         // Calculate fps
         fps = 1/deltaTime*1000;
 
-
-        render(game->surface);
         update(deltaTime);
+        render(game->surface);
     }
 }
 
